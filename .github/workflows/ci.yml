@@ -1,0 +1,24 @@
+name: Integracion Continua Healthy Bites
+
+on:
+  push:
+    branches: [ desarrollar, principal ]
+  pull_request:
+    branches: [ desarrollar, principal ]
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Ejecutar pruebas JUnit
+        run: mvn test
