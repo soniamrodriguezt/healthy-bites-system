@@ -3,12 +3,12 @@ name: Healthy Bites CI
 on:
   push:
     branches:
-      - desarrollar
-      - maestro
+    - develop
+    - master
   pull_request:
     branches:
-      - desarrollar
-      - maestro
+    - develop
+    - master
 
 jobs:
   test:
